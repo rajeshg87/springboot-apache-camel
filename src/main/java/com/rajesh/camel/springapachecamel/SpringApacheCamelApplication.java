@@ -1,0 +1,13 @@
+package com.rajesh.camel.springapachecamel;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApacheCamelApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApacheCamelApplication.class, args);
+    }
+
+}

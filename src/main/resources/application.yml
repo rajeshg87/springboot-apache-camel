@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+
+copy.file.from.route: file:data/input?delete=true
+copy.file.to.route: file:data/output?fileExist=Append
+timer.task: timer:hello?period=10s
+
+env: DEV Environment
+
+---
+
+spring:
+  profiles: stage
+
+copy.file.from.route: file:data/input?delete=true
+copy.file.to.route: file:data/output?fileExist=Append
+timer.task: timer:hello?period=10s
+
+env: STAGE Environment
+
+---
+
+spring:
+  profiles: prod
+
+copy.file.from.route: file:data/input?delete=true
+copy.file.to.route: file:data/output?fileExist=Append
+timer.task: timer:hello?period=10s
+
+env: PROD Environment
+
+---
+
+spring:
+  profiles: mock
+
+copy.file.from.route: direct:startRoute
+copy.file.to.route: mock:output
+timer.task: timer:hello?period=10s
+
+env: MOCK Environment
